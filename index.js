@@ -1,34 +1,12 @@
-// task 1
-console.log('task1');
+function Counntry (name, population, square) {
+    this.name = name;
+    this.population = population;
+    this.square = square;
 
-const factorial = function (num) {
-    let res = 1;
-
-    for (let i = 1; i <= num; i++) {
-        res *= i;
-    }
-
-    console.log(res);
-}
-
-factorial(10);
-
-// task 2
-console.log('task 2');
-
-let person = {
-    hair: 'blonde',
-    eyes: 'brown',
-    height: 180,
-    weight: 60,
-    warmUp: function() {
-        console.log('does warm up 2 hours a day');
-    },
-    run: function() {
-        console.log('runs a 42 km marathon');
+    this.density = function(population, square) {
+        return this.population / this.square;
     }
 }
 
-console.log(person.height);
-person.run();
-person.warmUp();
+const sweden = new Counntry('Sweden', 10000000, 528447);
+const poland = new Counntry('Poland', 37000000, 322575);
