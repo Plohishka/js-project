@@ -1,46 +1,53 @@
-const arr = [3, 6, 8, 2, 3, 5, 1];
+// task 1
+console.log('task1');
 
-////////////////////////////////
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const arr3 = arr1.concat(arr2);
+console.log(arr3);
 
-/* function average(arr) {
-    let sum = 0;
+// task 2
+console.log('task2');
 
-    for (let i = 0; i < arr.length; i++) {
-        sum += arr[i];
-    }
-    return sum / arr.length;
-}
+const arr4 = [1, 2, 3];
+arr4.reverse();
+console.log(arr4);
 
-console.log(average(arr)); */
+// task 3
+console.log('task3');
 
+const arr5 = [3, 4, 5];
+arr5.push(4, 8, 10);
+console.log(arr5);
 
+// task 4
+console.log('task4');
 
-/////////////////////////////////
-        
-/* function average(arr) {
-    let sum = 0;
+const arr6 = ['aaa', 'bbb', 'ccc'];
+const last = arr6.pop();
+console.log(last);
 
-    for (let elem of arr) {
-        sum += elem;
-    }
-    return sum / arr.length;
-}
+// task 5
+console.log('task5');
 
-console.log(average(arr)); */
+const arr7 = ['3', 7, 10];
+arr7.unshift(2, 8);
+console.log(arr7);
 
+// task 6
+console.log('task6');
 
-/////////////////////////////////
+const arr8 = ['3', 7, 10];
+const result = arr8.join(' ');
+console.log(result, typeof result);
 
+// task 7
+console.log('task7');
 
-function average(arr) {
-    const res = arr.reduce(function(sum, elem) {
-        return sum + elem;
-    })
-    return res / arr.length;
-}
+const arr = [2, 44, 11, 234, 8, 2, 4, 1];
 
-console.log(average(arr));
+const res = [];
+arr.forEach(elem => res.push(elem + 100));
 
-
-
+console.log(res);
 
