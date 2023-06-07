@@ -1,53 +1,162 @@
 // task 1
 console.log('task1');
 
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
-const arr3 = arr1.concat(arr2);
-console.log(arr3);
+/* const users = [
+    {
+        name: 'John',
+        lastName: 'Doe',
+        age: 18,
+        email: 'meil@com'
+    },
+    {
+        name: 'Jane',
+        lastName: 'Doe',
+        age: 20,
+        email: 'meil@com'
+    },
+    {
+        name: 'Josh',
+        lastName: 'Doe',
+        age: 17,
+        email: 'meil@com'
+    },
+    {
+        name: 'Jake',
+        lastName: 'Doe',
+        age: 21,
+        email: 'meil@com'
+    },
+    {
+        name: 'Jackson',
+        lastName: 'Doe',
+        age: 17,
+        email: 'meil@com'
+    },
+]
+
+
+const adultUsers = users.map(user => {
+
+    if (user.age >= 18) {
+        return {
+            fullname: `${user.name} ${user.lastName}`,
+            age: user.age,
+            email: user.email
+        }
+    }
+
+}) 
+
+function deleteEmpty(arr) {              // ???????
+
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] === 'undefined') {
+            arr.splice(i, 1);
+        }
+    }
+    return arr;
+
+}
+
+console.log(deleteEmpty(adultUsers)); */
+
 
 // task 2
 console.log('task2');
 
-const arr4 = [1, 2, 3];
-arr4.reverse();
-console.log(arr4);
+/* const arr = [2, 5, 9, 4, 3, 4, 7];
+
+const increase = arr.sort((num1, num2) => {
+    return num1 - num2;
+})
+
+console.log(increase);
+
+
+const decrease = arr.sort((num1, num2) => {
+    return num2 - num1;
+})
+
+console.log(decrease); */
+
 
 // task 3
 console.log('task3');
 
-const arr5 = [3, 4, 5];
-arr5.push(4, 8, 10);
-console.log(arr5);
+/* const arr = [2, 5, 9, 4, 3, 4, 7, 6];
+
+const even = arr.filter(elem => {
+    return elem % 2 === 0;
+})
+
+console.log(even); */
+
 
 // task 4
 console.log('task4');
 
-const arr6 = ['aaa', 'bbb', 'ccc'];
-const last = arr6.pop();
-console.log(last);
+/* const arr = [1, 2, 5, 9, 4, 3, 4, 7, 6];
+
+const evenSumElem = arr.reduce((sum, elem) => {
+
+    return elem % 2 === 0 ? sum + elem : sum;
+   
+}, 0)
+
+console.log(evenSumElem); */
+
 
 // task 5
 console.log('task5');
 
-const arr7 = ['3', 7, 10];
-arr7.unshift(2, 8);
-console.log(arr7);
+/* const catArray = [
+    {
+        name: 'Murzik',
+        color: 'black',
+        weight: 3,
+        age: 2
+    },
+    {
+        name: 'Murka',
+        color: 'grey',
+        weight: 5,
+        age: 3
+    },
+    {
+        name: 'Barsik',
+        color: 'red',
+        weight: 2,
+        age: 1
+    },
+    {
+        name: 'Cookie',
+        color: 'brown',
+        weight: 5,
+        age: 2
+    },
+    {
+        name: 'Stus',
+        color: 'grey',
+        weight: 2,
+        age: 5
+    },
+    {
+        name: 'Fagot',
+        color: 'black',
+        weight: 5,
+        age: 3
+    },
+    {
+        name: 'Kit',
+        color: 'pink',
+        weight: 2,
+        age: 1
+    },
 
-// task 6
-console.log('task6');
+];
 
-const arr8 = ['3', 7, 10];
-const result = arr8.join(' ');
-console.log(result, typeof result);
+const catName = catArray.map(elem => {
+    return {name: elem.name};
+})
 
-// task 7
-console.log('task7');
-
-const arr = [2, 44, 11, 234, 8, 2, 4, 1];
-
-const res = [];
-arr.forEach(elem => res.push(elem + 100));
-
-console.log(res);
-
+console.log(catName); */
