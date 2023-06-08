@@ -1,26 +1,21 @@
-const arr = [1, 2, 3, 4, 5];
+const arr = [1, 7, 2, 4, 3, 4, 5, 6, 9, 6];
 
-console.log('first option');
-
-/* function func(arr) {
-
+function func(arr) {
+    
     for (let i = 0; i < arr.length; i++) {
-        arr[i] = arr[arr.length - 1] - i;
+        for (let j = 0; j < i; j++) {
+            if (arr[i] === arr[j]) {
+                arr.splice(i, 1);
+            }
+        }
     }
-
+ 
     return arr;
 }
 
-console.log(func(arr)); */
+const findRepet = func(arr);
+const res = findRepet.sort((a, b) => {
+    return a - b;
+})
 
-
-
-
-console.log('second option');
-
-/* const res = arr.sort((a, b) => {
-    return b - a;
-});
-
-console.log(res); */
-
+console.log(res);
