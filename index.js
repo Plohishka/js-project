@@ -1,21 +1,33 @@
-const arr = [1, 7, 2, 4, 3, 4, 5, 6, 9, 6];
-
-function func(arr) {
-    
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < i; j++) {
-            if (arr[i] === arr[j]) {
-                arr.splice(i, 1);
-            }
-        }
-    }
- 
-    return arr;
+function Stairs() {
+    this.currentStair = 0;
 }
 
-const findRepet = func(arr);
-const res = findRepet.sort((a, b) => {
-    return a - b;
-})
+Stairs.prototype = new ProtoStairs;
 
+function ProtoStairs() {
+    this.up = function() {
+        this.currentStair++;
+    }
+    this.down = function() {
+        this.currentStair--;
+    }
+    this.showStair = function() {
+        return this.currentStair;
+    }
+}
+
+
+const res = new Stairs();
+res.up();
+res.up();
+res.showStair();
+res.down();
+res.showStair();
 console.log(res);
+
+const res1 = new Stairs();
+res1.up();
+res1.up();
+res1.up();
+res1.up();
+console.log(res1);
