@@ -1,33 +1,31 @@
-function Stairs() {
-    this.currentStair = 0;
+'use strict';
+
+
+
+const arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+
+function func(arr) {
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            if (i % 2 === 0 && j % 2 === 0) {
+                arr[i][j] = 'pp';
+            } else if (i % 2 === 0 && j % 2 !== 0) {
+                arr[i][j] = 'pn';
+            } else if (i % 2 !== 0 && j % 2 === 0) {
+                arr[i][j] = 'np';
+            } else {
+                arr[i][j] = 'nn';
+            }
+        }
+    }
+    return arr;
 }
 
-Stairs.prototype = new ProtoStairs;
+console.log(func(arr));
 
-function ProtoStairs() {
-    this.up = function() {
-        this.currentStair++;
-    }
-    this.down = function() {
-        this.currentStair--;
-    }
-    this.showStair = function() {
-        return this.currentStair;
+for (let subElem of arr) {
+    for (let elem of subElem) {
+        console.log(elem);
     }
 }
-
-
-const res = new Stairs();
-res.up();
-res.up();
-res.showStair();
-res.down();
-res.showStair();
-console.log(res);
-
-const res1 = new Stairs();
-res1.up();
-res1.up();
-res1.up();
-res1.up();
-console.log(res1);
