@@ -35,6 +35,7 @@ function isPalindrome(str) {
     while(start < end) {
         const leftChar = str[start];
         const rightChar = str[end];
+        
 
         if (!isLetterNumber(leftChar)) {
             start += 1;
@@ -42,9 +43,10 @@ function isPalindrome(str) {
         }
 
         if (!isLetterNumber(rightChar))  {
-            end += 1;
+            end -= 1;
             continue;
         }
+
 
         if (leftChar.toLowerCase() !== rightChar.toLowerCase()) {
             return false;
@@ -60,5 +62,5 @@ function isPalindrome(str) {
 console.log(isPalindrome('Anna'));
 console.log(isPalindrome('Mama'));
 console.log(isPalindrome('Namman'));
-console.log(isPalindrome('2002'));
+console.log(isPalindrome('!2002'));
 
