@@ -1,109 +1,57 @@
 'use strict';
 
-
-
-// task 1
-console.log('task1');
-
-
-/* function factorial(num) {
-    let sum = 1;
-
-    for (let i = 1; i <= num; i++) {
-        sum *= i;
-    }
-
-    return sum;
-}
-
-console.log(factorial(5)); */
-
-
-function factorial(num) {
-
-    /* if (num === 1) {
-        return num;
-    } else {
-        return num * factorial(num - 1);
-    } */
-    return num === 1 ? num : num * factorial(num - 1);
-
-}
-
-console.log(factorial(5));
-
-
-////////////////////////////////////////////////////////////////////
-
-
-// task 2
-console.log('task2');
-
-
 /**
- * Check a character for a string or a number
- * @param {*} char  Character to be tested
- * @returns   true or false
+ * Fibonacci sequence
+ * @param {number} num1 First number
+ * @param {number} num2 Second number
+ * @param {number} i Counter (how many iterations)
+ * @returns Sequence of numbers
  */
 
+function fibonacci(num1, num2, i) {
 
-function isLetterNumber(char) {
-    return (char.toLowerCase() !== char.toUpperCase() || !isNaN(char));
-}
-
-
-/**
- * Checking a string for a palindrome
- * @param {string} str  The string to be checked
- * @param {number} start  Left row counter
- * @param {number} end  Right row counter
- * @param {*} leftChar  Character coming from the left
- * @param {*} rightChar  Character coming from the right
- * @throws {TypeError}  If the variable (str) is not a string
- * @returns true or false
- */
-
-function isPalindrome(str) {
-
-    if (typeof str !== 'string') {
-        throw new TypeError('the variable \'str\' must be a string!');
+    if (num1 < 0 || num2 < 0) {
+        throw new RangeError('Number less than zero!')
     }
     
-    let start = 0;
-    let end = str.length - 1;
-
-    while(start < end) {
-        const leftChar = str[start];
-        const rightChar = str[end];
-
-        if (!isLetterNumber(leftChar)) {
-            start += 1;
-            continue;
-        }
-
-        if (!isLetterNumber(rightChar))  {
-            end += 1;
-            continue;
-        }
-
-        if (leftChar.toLowerCase() !== rightChar.toLowerCase()) {
-            return false;
-        }
-
-        start += 1;
-        end -= 1;
+    if (typeof num1 !== 'number' || typeof num2 !== 'number' || typeof i !== 'number') {
+        throw new TypeError('Should be a number!');
     }
 
-    return true;
+
+    if (i <= 1) {
+        return `${num1} ${num2}`;
+    } else {
+        console.log(`${num1} ${num2}`);
+
+        let sum = num1 + num2;
+        num1 = num2;
+        num2 = sum;
+        i--;
+        return fibonacci(num1, num2, i);
+    }
 }
 
 
 
-console.log(isPalindrome('Anna'));
-console.log(isPalindrome('Mama'));
-console.log(isPalindrome(22));      /* error */
-console.log(isPalindrome('Namman'));
-console.log(isPalindrome('2002'));
+/* function fibonacci(num1, num2, end) {
+    let sum;
+
+    for (let i = 1; i <= end; i++) {
+        console.log(num1, num2);
+
+        sum = num1 + num2;
+        num1 = num2;
+        num2 = sum;
+
+        if (i >= end - 1) {
+            return `${num1} ${num2}`;
+        }
+}
+
+} */
 
 
-
+console.log(fibonacci(0, 1, 10))
+// console.log(fibonacci('0', 1, 10)); /*  TypeError */
+// console.log(fibonacci(-1, 1, 10)); /* RangeError */
