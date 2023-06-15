@@ -1,57 +1,43 @@
 'use strict';
 
-/**
- * Fibonacci sequence
- * @param {number} num1 First number
- * @param {number} num2 Second number
- * @param {number} i Counter (how many iterations)
- * @returns Sequence of numbers
- */
 
-function fibonacci(num1, num2, i) {
 
-    if (num1 < 0 || num2 < 0) {
-        throw new RangeError('Number less than zero!')
-    }
-    
-    if (typeof num1 !== 'number' || typeof num2 !== 'number' || typeof i !== 'number') {
-        throw new TypeError('Should be a number!');
+class Human {
+    constructor(fullName, year, gender) {
+
+    this.fullName = fullName;
+    this.year = year;
+    this.gender = gender;
+
     }
 
-
-    if (i <= 1) {
-        return `${num1} ${num2}`;
-    } else {
-        console.log(`${num1} ${num2}`);
-
-        let sum = num1 + num2;
-        num1 = num2;
-        num2 = sum;
-        i--;
-        return fibonacci(num1, num2, i);
+    greeting() {
+        return this.gender === 'Mr' ? `Hello Mr. ${this.fullName}!` : `Hello Mrs. ${this.fullName}!`;
     }
 }
 
+class Student extends Human {
+    constructor(fullName, year, gender, admissionYear, recordBook, averageScore) {
+    super(fullName, year, gender);
 
+    this.admissionYear = admissionYear;
+    this.recordBook = recordBook;
+    this.averageScore = averageScore;
 
-/* function fibonacci(num1, num2, end) {
-    let sum;
+    }
 
-    for (let i = 1; i <= end; i++) {
-        console.log(num1, num2);
+    isExcellentStudent() {
+        const date = new Date();
+        this.averageScore = this.recordBook / (date.getFullYear() - this.admissionYear);
+        return this.averageScore >= 90;
+    }
 
-        sum = num1 + num2;
-        num1 = num2;
-        num2 = sum;
-
-        if (i >= end - 1) {
-            return `${num1} ${num2}`;
-        }
 }
 
-} */
+const people1 = new Human('Anzhelika Plokhykh', 1989, 'Mrs');
+const student1 = new Student('Oleksandr Plokhykh', 1989, 'Mr', 2020, 300);
 
-
-console.log(fibonacci(0, 1, 10))
-// console.log(fibonacci('0', 1, 10)); /*  TypeError */
-// console.log(fibonacci(-1, 1, 10)); /* RangeError */
+console.log(people1);
+console.log(people1.greeting());
+console.log(student1);
+console.log(student1.isExcellentStudent());
