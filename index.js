@@ -2,17 +2,19 @@
 
 
 
-const btn = document.querySelector('#btn');
-const body = document.querySelector('body');
+const res = document.querySelector('#res');
+const step = document.querySelector('#step');
 
-btn.addEventListener('click', function() {
-  body.classList.toggle('switch');
+const btn1 = document.querySelector('#btn1');
+const btn2 = document.querySelector('#btn2');
+
+btn1.addEventListener('click', function() {
+  res.value = Number(res.value) - Number(step.value);
 })
 
-
-
-
-
+btn2.addEventListener('click', function() {
+  res.value = Number(res.value) + Number(step.value);
+})
 
 
 
