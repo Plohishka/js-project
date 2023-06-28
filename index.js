@@ -2,16 +2,12 @@
 
 
 
-const btns = document.querySelectorAll('button');
+const elem = document.querySelector('input');
+const res = document.querySelector('#res');
 
-const img = document.querySelector('img');
-
-for (let btn of btns) {
-  btn.addEventListener('click', function() {
-    img.src = this.getAttribute("data-img");
-  })
-}
-
+elem.addEventListener('blur', function() {
+  res.textContent = Number(elem.value) ** 2;
+})
 
 
 
