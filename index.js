@@ -2,19 +2,17 @@
 
 
 
-const res = document.querySelector('#res');
-const step = document.querySelector('#step');
+const btns = document.querySelectorAll('button');
 
-const btn1 = document.querySelector('#btn1');
-const btn2 = document.querySelector('#btn2');
+const img = document.querySelector('img');
 
-btn1.addEventListener('click', function() {
-  res.value = Number(res.value) - Number(step.value);
-})
+for (let btn of btns) {
+  btn.addEventListener('click', function() {
+    img.src = this.getAttribute("data-img");
+  })
+}
 
-btn2.addEventListener('click', function() {
-  res.value = Number(res.value) + Number(step.value);
-})
+
 
 
 
