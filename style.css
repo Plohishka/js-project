@@ -1,0 +1,49 @@
+body {
+    background-color: #2260cb;;
+    box-sizing: border-box;
+}
+
+input, button {
+    font-size: 20px;
+    border-radius: 7px;
+    padding: 8px;
+}
+
+button {
+    background-color: #2260cb;
+    color: white;
+    margin-left: 10px;
+}
+
+#section {
+    width: 50%;
+    border: 1px solid black;
+    margin: 0 auto;
+    background-color: white;
+}
+
+#doing {
+    border: 3px solid #2260cb;
+    margin-bottom: 50px;
+}
+
+#btn {
+    padding: 8px 20px;
+}
+
+#list {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+li {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.text {
+    background-color: #c5e0e5;
+    border: 3px solid #c6cdd0;
+}
+

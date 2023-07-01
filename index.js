@@ -3,27 +3,42 @@
 
 
 
-const elem = document.querySelector('#elem');
+
+
+
+const doing = document.querySelector('#doing');
 const btn = document.querySelector('#btn');
-const body = document.querySelector('body');
-
-let days = ['вс', 'пн', 'вт', 'ср', 
-	'чт', 'пт', 'сб'];
-
-const date = new Date();
+const list = document.querySelector('#list');
 
 
-function func(event) {
-  if (date.getDay() % 2 !== 0) {
-    event.stopPropagation();
-    console.log('!!!');
-  }
+btn.addEventListener('click', createList);
+
+
+
+function createList() {
+  const elem = document.createElement('li');
+
+  const inp = document.createElement('input');
+  inp.classList.add('text');
+
+  const del = document.createElement('button');
+  del.classList.add('remove');
+
+
+  inp.value = doing.value;
+  doing.value = '';
+  del.textContent = 'Remove';
+
+  list.append(elem);
+  elem.append(inp, del);
+  
+
+
+  del.addEventListener('click', function() {
+    elem.remove();
+  })
 
 }
 
 
-btn.addEventListener('click', function() {
-  console.log(`Сегодня ${days[date.getDay()]}`);
-});
 
-body.addEventListener('click', func, {capture: true});
