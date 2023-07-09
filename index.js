@@ -55,7 +55,7 @@ function createImgWrapper(product) {
     imgWrapper.setAttribute('id', `wrapper${product.id}`);
     imgWrapper.style.backgroundColor = stringToColor(`${product.brand} ${product.title} ${product.category}`);
 
-    // const img = createImg(product);      /* ???? */
+    const img = createImg(product);    
 
     return imgWrapper;
 }
@@ -64,9 +64,8 @@ function createImgWrapper(product) {
 function createImg(product) {
     const img = document.createElement('img');
 
-    const [{images}] = product;             /* ????? */
 
-    img.setAttribute('src', images[0]);  /*  ??????? */
+    img.setAttribute('src', product.images['0']); 
     img.setAttribute('alt', product.brand);
     img.setAttribute('id', `${product.id}`);
     img.classList.add('card-img');
@@ -76,6 +75,7 @@ function createImg(product) {
 
     return img;
 }
+
 
 function stringToColor(str) {
     let hash = 0;
@@ -100,10 +100,9 @@ const prom = fetch('https://dummyjson.com/products')
     .then((data) => {
         console.log(data);
         const { products } = data;
-        const [{images}] = products;
-        console.log(images);
 
-        const productsArr = products.map((product) => { return createCard(product); })
+        const productsArr = products.map((product) => { 
+            return createCard(product); })
         root.append(...productsArr);
     })
 
